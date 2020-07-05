@@ -45,25 +45,7 @@
     },
     "extra": {
         "laravel": {
-            "
-    /*public function boot()
-    {
-
-        $this->app->when(JabberChannel::class)
-             ->needs(Jabber::class)
-             ->give(function () {
-                 $jabberConfig = config('services.jabber');
-                 $options      = new Options($jabberConfig['address']);
-                 $options->setUsername($jabberConfig['username'])
-                 ->setPassword($jabberConfig['password']) ;
-
-                 return new Jabber(
-                     new Client(
-                         $options
-                     )
-                 );
-             });
-    }*/": [
+            "providers": [
                 "LaravelMerax\\XmppNotification\\JabberServiceProvider"
             ]
         }
