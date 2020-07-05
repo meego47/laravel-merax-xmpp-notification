@@ -1,0 +1,71 @@
+{
+    "name": "laravel-merax/xmpp-notification",
+    "description": "laravel notification packages for jabber",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "minul islam",
+            "email": "maanpatwary@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "mironcenco ruslan",
+            "email": "meego@dipime.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "fabiang/xmpp": "^0.7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/notifications": "^5.1|^5.2|^5.3|^5.4|^5.5|^5.6|^5.7",
+        "illuminate/support": "^5.1|^5.2|^5.3|^5.4|^5.5|^5.6|^5.7"
+    },
+    "require-dev": {
+        "nunomaduro/larastan": "^0.3.15",
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "^0.9.5",
+        "orchestra/testbench": "3.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelMerax\\XmppNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelMerax\\XmppNotification\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "
+    /*public function boot()
+    {
+
+        $this->app->when(JabberChannel::class)
+             ->needs(Jabber::class)
+             ->give(function () {
+                 $jabberConfig = config('services.jabber');
+                 $options      = new Options($jabberConfig['address']);
+                 $options->setUsername($jabberConfig['username'])
+                 ->setPassword($jabberConfig['password']) ;
+
+                 return new Jabber(
+                     new Client(
+                         $options
+                     )
+                 );
+             });
+    }*/": [
+                "LaravelMerax\\XmppNotification\\JabberServiceProvider"
+            ]
+        }
+    }
+}
