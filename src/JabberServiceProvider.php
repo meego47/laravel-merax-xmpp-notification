@@ -31,26 +31,4 @@ class JabberServiceProvider extends ServiceProvider
             return  new JabberService($options);
         });
     }
-
-    public function register()
-    {
-        //$this->registerClient();
-    }
-
-    protected function registerJabberService()
-    {
-        $this->app->bind(JabberService::class, function ($app) {
-            $config = $app['config']['services.jabber'];
-            $username = array_get($config, 'username');
-            $password = array_get($config, 'password');
-            $address = array_get($config, 'address');
-            $logger = $app['log'];
-            $options = new Options($address);
-            $options->setLogger($logger)
-                ->setUsername($username)
-                ->setPassword($password);
-
-            return  new JabberService($options);
-        });
-    }
 }
