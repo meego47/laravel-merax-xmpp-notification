@@ -4,8 +4,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "mironcenco ruslan",
+            "name": "Mironcenco Ruslan",
             "email": "meego@dipime.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Minul Islam",
+            "email": "maanpatwary@gmail.com",
             "role": "Developer"
         }
     ],
