@@ -19,13 +19,17 @@ class JabberChannel
     public function send($notifiable, Notification $notification)
     {
         try {
-            $this->getTo($notifiable);
             $message = $notification->toJabber($notifiable);
             if (is_string($message)) {
                 $message = JabberMessage::create($message);
             }
+
             if (! $message instanceof JabberMessage) {
                 throw CouldNotSendNotification::invalidMessageObject($message);
+            }
+
+            if ($message->toNotGiven()) {
+                $message->to($this->getTo($notifiable));
             }
 
             if (isset($message->payload['text']) && $message->payload['chat_id']) {
